@@ -86,6 +86,15 @@ h1,h2,h3{font-weight:600;letter-spacing:-.035em;line-height:1.05}
 .hero-tile{margin-top:64px;border-radius:var(--r);overflow:hidden;position:relative;aspect-ratio:16/8.2;background:#111}
 .hero-tile img{width:100%;height:100%;object-fit:cover;transform:scale(1.02);will-change:transform}
 
+/* artwork */
+.art-feature{padding:92px 0 48px;background:var(--sec)}
+.art-head{display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:40px;margin-bottom:34px}
+.art-head .lede{justify-self:end;font-size:22px;max-width:520px}
+.art-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.art-piece{margin:0;background:#111;border:1px solid rgba(255,255,255,.08);border-radius:var(--r);overflow:hidden}
+.art-piece img{width:100%;aspect-ratio:16/9;object-fit:cover;background:#050505}
+.art-piece figcaption{padding:17px 22px 20px;color:var(--mute);font-size:14px;font-weight:600;letter-spacing:-.01em}
+
 /* launch */
 .launch{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1000px;margin:56px auto 0}
 .lc{background:var(--gray);border-radius:24px;padding:30px 24px 26px;display:flex;flex-direction:column;align-items:center;gap:2px;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
@@ -342,6 +351,8 @@ th{font-size:11px;color:var(--mute);font-weight:600}
   .hero{padding-top:calc(var(--nav) + 56px)}
   .hero-tile{aspect-ratio:4/4.4;margin-top:44px;border-radius:22px}
   .trio{grid-template-columns:1fr;margin-top:44px}.tr{aspect-ratio:4/3.4;border-radius:22px}
+  .art-head{grid-template-columns:1fr;gap:14px}.art-head .lede{justify-self:start}
+  .art-grid{grid-template-columns:1fr}
   .statement{padding:90px 0 60px}
   .menu-top{display:block}.menu-top .lede{margin-top:14px}
 }
@@ -403,6 +414,19 @@ th{font-size:11px;color:var(--mute);font-weight:600}
       <a class="tr rv" href="#kalinga"><img src="img/building-day.jpg" alt="The Kalinga Kitchen, first floor of the TriStar Building" style="object-position:50% 40%"><span class="cap"><b>The Kalinga Kitchen</b><i>First floor</i></span></a>
       <a class="tr rv" href="#utkal"><img src="img/terrace.jpg" alt="Open terrace dining at Utkal Biryani House"><span class="cap"><b>Utkal Biryani House</b><i>Open terrace</i></span></a>
       <a class="tr rv" href="#chilika"><div class="soon"><img class="plate" src="img/logo-chilika.png" alt="Chilika Banquet"></div><span class="cap"><b>Chilika Banquet</b><i>Coming soon</i></span></a>
+    </div>
+  </div>
+</section>
+
+<section class="art-feature" id="art" aria-labelledby="art-title">
+  <div class="wide">
+    <div class="art-head rv">
+      <div><span class="eyebrow">Featured art</span><h2 class="h-sec" id="art-title">A little <span class="m">colour.</span></h2></div>
+      <p class="lede">Colour, pattern and movement bring another layer to the table.</p>
+    </div>
+    <div class="art-grid">
+      <figure class="art-piece rv"><img src="WhatsApp Image 2026-10-24 at 13.05.17.jpeg" alt="Colourful artwork with two stylised dancers on a patterned background" loading="lazy"><figcaption>Omiki Nale · Warm tones</figcaption></figure>
+      <figure class="art-piece rv"><img src="WhatsApp Image 2026-10-24 at 13.03.45.jpeg" alt="Colourful artwork with two stylised dancers on a green patterned background" loading="lazy"><figcaption>Omiki Nale · Green tones</figcaption></figure>
     </div>
   </div>
 </section>
