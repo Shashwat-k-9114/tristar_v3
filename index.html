@@ -70,14 +70,20 @@ h1,h2,h3{font-weight:600;letter-spacing:-.035em;line-height:1.05}
 
 /* hero */
 .hero{padding:calc(var(--nav) + 80px) 0 0;text-align:center}
-.hero h1{font-size:clamp(48px,9vw,96px);letter-spacing:-.045em;line-height:1.02;margin:6px 0 18px}
-.hero-title{display:grid;grid-template-columns:clamp(96px,12vw,170px) minmax(0,1fr) clamp(96px,12vw,170px);align-items:center;justify-content:center;gap:clamp(12px,2.5vw,32px);margin:6px auto 18px}
-.hero-title h1{position:relative;z-index:1;width:100%;max-width:760px;justify-self:center;margin:0}
-.hero-sticker{width:100%;aspect-ratio:16/9;object-fit:cover;background:#050505;border:7px solid var(--ink);border-radius:18px;box-shadow:0 18px 40px rgba(0,0,0,.5);pointer-events:none}
-.hero-sticker.left{transform:rotate(-8deg) translateY(5px)}
-.hero-sticker.right{transform:rotate(8deg) translateY(18px)}
-.hero .sub{font-size:clamp(21px,3vw,32px);line-height:1.15;font-weight:600;letter-spacing:-.025em;color:var(--ink);max-width:760px;margin:0 auto 30px}
-.hero .cta{justify-content:center}
+.hero-stage{position:relative;height:600px;height:clamp(520px,44vw,640px);overflow:hidden;border-radius:32px;background:#061108 url("WhatsApp Image 2026-10-24 at 13.03.45.jpeg") center center/cover no-repeat;isolation:isolate;box-shadow:0 28px 70px rgba(0,0,0,.34)}
+.hero-stage::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.08),transparent 28%,rgba(0,0,0,.18))}
+.hero-copy{position:relative;z-index:3;display:flex;height:100%;max-width:790px;margin:0 auto;padding:clamp(58px,7vw,96px) 24px 0;flex-direction:column;align-items:center;text-align:center}
+.hero-copy h1{font-size:78px;font-size:clamp(52px,7.2vw,92px);letter-spacing:-.045em;line-height:1.02;margin:12px 0 20px;text-wrap:balance}
+.hero-copy .sub{font-size:24px;font-size:clamp(20px,2.25vw,28px);line-height:1.17;font-weight:600;letter-spacing:-.025em;color:var(--ink);max-width:670px;margin:0 auto 26px;text-shadow:0 2px 18px rgba(0,0,0,.55)}
+.hero-copy .cta{justify-content:center}
+.hero-art-cover{position:absolute;pointer-events:none}
+.hero-art-cover.center{left:27%;right:27%;top:19%;bottom:18%;z-index:1;border-radius:34px;background:#061108;box-shadow:0 0 70px rgba(0,0,0,.28),inset 0 0 70px rgba(87,190,70,.04)}
+.hero-art-cover.right{top:0;right:0;bottom:0;width:31%;z-index:1;background:linear-gradient(90deg,rgba(6,17,8,.14),rgba(6,17,8,.9) 17%,rgba(6,17,8,.98))}
+.hero-art-cover.mobile-sides{display:none}
+.hero-dancer{position:absolute;z-index:2;pointer-events:none;background-image:url("WhatsApp Image 2026-10-24 at 13.03.45.jpeg");background-repeat:no-repeat;background-size:auto 100%;filter:drop-shadow(0 22px 24px rgba(0,0,0,.28));-webkit-mask-image:radial-gradient(ellipse at center,#000 54%,rgba(0,0,0,.96) 72%,transparent 100%);mask-image:radial-gradient(ellipse at center,#000 54%,rgba(0,0,0,.96) 72%,transparent 100%)}
+.hero-dancer-right{top:17%;right:1.5%;width:250px;width:clamp(205px,20vw,278px);height:410px;height:clamp(330px,35vw,452px);background-position:right center}
+.hero-art-mark{position:absolute;left:50%;bottom:14px;z-index:2;width:120px;height:82px;transform:translateX(-50%);background:url("WhatsApp Image 2026-10-24 at 13.03.45.jpeg") center bottom/500% auto no-repeat;filter:drop-shadow(0 8px 12px rgba(0,0,0,.35));-webkit-mask-image:radial-gradient(ellipse at center,#000 56%,transparent 100%);mask-image:radial-gradient(ellipse at center,#000 56%,transparent 100%)}
+.hero-dancers-mobile{display:none}
 .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:64px}
 .tr{position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:4/5;background:#111;display:block}
 .tr>img,.tr .soon{position:absolute;inset:0;width:100%;height:100%}
@@ -335,6 +341,21 @@ th{font-size:11px;color:var(--mute);font-weight:600}
   .promises{grid-template-columns:1fr}
   .f-cols{grid-template-columns:1fr 1fr}
 }
+@media (min-width:834px) and (max-width:1280px){
+  .hero-stage{height:560px;height:clamp(520px,44vw,600px)}
+  .hero-copy{max-width:760px;padding-top:64px}
+  .hero-copy h1{font-size:68px;font-size:clamp(54px,6.4vw,76px)}
+  .hero-copy .sub{font-size:22px;font-size:clamp(20px,2.1vw,25px)}
+  .hero-art-cover.center{left:20%;right:20%}
+  .hero-dancer-right{width:220px;width:clamp(190px,19vw,245px);height:360px;height:clamp(320px,34vw,420px)}
+}
+@media (min-width:834px) and (max-width:1100px){
+  .hero-copy{max-width:700px;padding-top:58px}
+  .hero-copy h1{font-size:56px;font-size:clamp(50px,5.6vw,62px)}
+  .hero-copy .sub{font-size:20px;font-size:clamp(19px,2vw,22px)}
+  .hero-art-cover.center{left:18%;right:18%}
+  .hero-dancer-right{width:190px;height:320px}
+}
 @media (max-width:833px){
   section{padding:80px 0}
   .gnav .links{position:fixed;top:var(--nav);left:0;right:0;height:calc(100svh - var(--nav));background:#000;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:0;padding:22px 24px;opacity:0;visibility:hidden;transition:.35s}
@@ -345,11 +366,18 @@ th{font-size:11px;color:var(--mute);font-weight:600}
   .burger{display:grid}
   .gnav .right .pill{display:none}
   .hero{padding-top:calc(var(--nav) + 56px)}
-  .hero-title{grid-template-columns:1fr 1fr;gap:16px;max-width:340px;margin-top:0}
-  .hero-title h1{grid-column:1/-1;grid-row:2;font-size:clamp(44px,10vw,72px)}
-  .hero-sticker{width:min(42vw,150px);border-width:5px;border-radius:15px}
-  .hero-sticker.left{grid-column:1;grid-row:1;transform:rotate(-8deg) translateY(5px)}
-  .hero-sticker.right{grid-column:2;grid-row:1;transform:rotate(8deg) translateY(12px)}
+  .hero-stage{height:auto;min-height:0;padding:54px 16px 16px;border-radius:24px;background-size:auto 100%;background-position:center bottom}
+  .hero-copy{height:auto;padding:0 6px;max-width:600px}
+  .hero-copy h1{font-size:46px;font-size:clamp(42px,9vw,72px);margin:12px 0 18px}
+  .hero-copy .sub{font-size:20px;font-size:clamp(19px,3.1vw,24px);max-width:500px;margin-bottom:24px}
+  .hero-art-cover.center{left:6%;right:6%;top:18%;bottom:12%;border-radius:24px}
+  .hero-art-cover.right,.hero-dancer-right{display:none}
+  .hero-art-cover.mobile-sides{display:block;left:0;right:0;bottom:0;height:42%;z-index:1;background:linear-gradient(90deg,#061108 0 24%,rgba(6,17,8,.72) 31%,transparent 39% 61%,rgba(6,17,8,.72) 69%,#061108 76% 100%)}
+  .hero-art-mark{bottom:10px;width:104px;height:72px}
+  .hero-dancers-mobile{display:flex;position:relative;z-index:2;justify-content:space-between;align-items:flex-end;gap:12px;height:164px;margin:16px 0 0}
+  .hero-dancer-mobile{position:relative;flex:none;width:124px;height:168px;background-size:auto 100%;}
+  .hero-dancer-mobile-left{background-position:left center}
+  .hero-dancer-mobile-right{width:112px;height:158px;background-position:right center}
   .hero-tile{aspect-ratio:4/4.4;margin-top:44px;border-radius:22px}
   .trio{grid-template-columns:1fr;margin-top:44px}.tr{aspect-ratio:4/3.4;border-radius:22px}
   .statement{padding:90px 0 60px}
@@ -366,6 +394,9 @@ th{font-size:11px;color:var(--mute);font-weight:600}
   .f-cols{grid-template-columns:1fr 1fr}
   .legend .lnk{margin-left:0}
   .hero .cta{flex-direction:column;gap:18px}
+  .hero-dancers-mobile{height:142px;margin-top:14px}
+  .hero-dancer-mobile{width:106px;height:146px}
+  .hero-dancer-mobile-right{width:96px;height:136px}
 }
 </style>
 </head>
@@ -400,14 +431,23 @@ th{font-size:11px;color:var(--mute);font-weight:600}
 <main id="home">
 <section class="hero">
   <div class="wide">
-    <span class="eyebrow">Since 1947 · Opening 2027</span>
-    <div class="hero-title">
-      <img class="hero-sticker left" src="WhatsApp Image 2026-10-24 at 13.05.17.jpeg" alt="Colourful artwork with two stylised dancers on a patterned background">
-      <h1>Three legacies, united.<br>One Odia table.</h1>
-      <img class="hero-sticker right" src="WhatsApp Image 2026-10-24 at 13.03.45.jpeg" alt="Colourful artwork with two stylised dancers on a green patterned background">
+    <div class="hero-stage">
+      <div class="hero-art-cover center" aria-hidden="true"></div>
+      <div class="hero-art-cover right" aria-hidden="true"></div>
+      <div class="hero-art-cover mobile-sides" aria-hidden="true"></div>
+      <div class="hero-dancer hero-dancer-right" aria-hidden="true"></div>
+      <div class="hero-art-mark" aria-hidden="true"></div>
+      <div class="hero-copy">
+        <span class="eyebrow">Since 1947 · Opening 2027</span>
+        <h1>Three legacies, united.<br>One Odia table.</h1>
+        <p class="sub">The Kalinga Kitchen, Utkal Biryani House and Chilika Banquet — heritage cooking and celebration, together.</p>
+        <div class="cta"><a class="pill" href="#reserve">Pre-book a table</a><a class="lnk" href="#story">Our story</a></div>
+      </div>
+      <div class="hero-dancers-mobile" aria-hidden="true">
+        <div class="hero-dancer hero-dancer-mobile hero-dancer-mobile-left"></div>
+        <div class="hero-dancer hero-dancer-mobile hero-dancer-mobile-right"></div>
+      </div>
     </div>
-    <p class="sub">The Kalinga Kitchen, Utkal Biryani House and Chilika Banquet — heritage cooking and celebration, together.</p>
-    <div class="cta"><a class="pill" href="#reserve">Pre-book a table</a><a class="lnk" href="#story">Our story</a></div>
     <div class="launch">
       <a class="lc rv" href="#reserve" data-house="The Kalinga Kitchen"><span class="k">Opening</span><b class="d">26 January 2027</b><span class="n">The Kalinga Kitchen · First floor</span><span class="cd" data-date="2027-01-26"></span><span class="lnk">Pre-book a table</span></a>
       <a class="lc rv" href="#reserve" data-house="Utkal Biryani House"><span class="k">Opening</span><b class="d">14 February 2027</b><span class="n">Utkal Biryani House · Open terrace</span><span class="cd" data-date="2027-02-14"></span><span class="lnk">Pre-book a table</span></a>
@@ -611,8 +651,8 @@ th{font-size:11px;color:var(--mute);font-weight:600}
 <script src="img/dishes/photos.js"></script>
 <script>
 (()=>{
-const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
-const store={get(k,d){try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch{}}};
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>Array.prototype.slice.call(r.querySelectorAll(s));
+const store={get(k,d){try{const v=JSON.parse(localStorage.getItem(k));return v==null?d:v}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 const rupee=n=>'₹'+n.toLocaleString('en-IN');
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const ICON=n=>`<svg class="ic"><use href="#i-${n}"/></svg>`;
@@ -629,7 +669,7 @@ const CATS=[
  {id:'sweets',name:'Misanna',intro:'Sweets from the Odia table.'},
  {id:'drinks',name:'Beverages',intro:'Beverages and hydration.'}
 ];
-let _id=100;const I=(cat,name,price,d,desc,extra={})=>({id:++_id,cat,name,price,d,desc,...extra});
+let _id=100;const I=(cat,name,price,d,desc,extra={})=>Object.assign({id:++_id,cat,name,price,d,desc},extra);
 const MENU=[
  I('thalis','Mutton Thali',400,'n','Slow-cooked tender mutton curry served with aromatic rice, dal and authentic sides.'),
  I('thalis','Desi Chicken Thali',350,'n','Country chicken prepared in traditional spices, served with a complete meal spread.'),
@@ -724,7 +764,7 @@ $('#cartBtn').onclick=()=>openCart();$('#drClose').onclick=()=>openCart(false);s
 const phoneOk=v=>{const d=v.replace(/\D/g,'');return d.length===10||(d.length===12&&d.startsWith('91'))||(d.length===11&&d.startsWith('0'))};
 const todayStr=()=>{const d=new Date();d.setMinutes(d.getMinutes()-d.getTimezoneOffset());return d.toISOString().slice(0,10)};
 const flag=(i,ok)=>{i.closest('.fld').classList.toggle('err',!ok);return ok};
-const wire=f=>$$('input,select',f).forEach(i=>i.addEventListener('input',()=>i.closest('.fld')?.classList.remove('err')));
+const wire=f=>$$('input,select',f).forEach(i=>i.addEventListener('input',()=>{const fld=i.closest('.fld');if(fld)fld.classList.remove('err')}));
 $('#bq-date').min='2027-08-15';
 const OPEN={'The Kalinga Kitchen':'2027-01-26','Utkal Biryani House':'2027-02-14'};
 const fmtD=d=>new Date(d+'T00:00:00').toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'});
@@ -737,7 +777,7 @@ function syncRes(keep){syncTimes($('#rsvForm').elements.seat.value);const h=$('#
 $$('#rsvForm input[name=seat]').forEach(r=>r.addEventListener('change',()=>syncRes(true)));syncRes();
 $$('.lc').forEach(a=>a.addEventListener('click',()=>{const r=$$('#rsvForm input[name=seat]').find(x=>x.value===a.dataset.house);if(r){r.checked=true;syncRes()}}));
 $$('.cd[data-date]').forEach(c=>{const t=new Date(c.dataset.date+'T00:00:00'),n=Math.ceil((t-new Date())/864e5);c.textContent=n>1?n+' days to go':n===1?'Opens tomorrow':n===0?'Opens today':'Now open'});
-function save(kind,data){const all=store.get('ts2_inbox',[]);const ref=kind.slice(0,3).toUpperCase()+'-'+Date.now().toString(36).toUpperCase().slice(-6);all.unshift({ref,kind,at:new Date().toISOString(),...data});store.set('ts2_inbox',all);return ref}
+function save(kind,data){const all=store.get('ts2_inbox',[]);const ref=kind.slice(0,3).toUpperCase()+'-'+Date.now().toString(36).toUpperCase().slice(-6);all.unshift(Object.assign({ref,kind,at:new Date().toISOString()},data));store.set('ts2_inbox',all);return ref}
 const modal=$('#modal');
 function showModal(h,wide){$('#mbox').innerHTML=h;$('#mbox').style.maxWidth=wide?'980px':'';modal.classList.add('on')}
 modal.addEventListener('click',e=>{if(e.target===modal||e.target.closest('[data-close]'))modal.classList.remove('on')});
@@ -749,14 +789,14 @@ const bq=$('#bqForm');wire(bq);
 bq.addEventListener('submit',e=>{e.preventDefault();const f=bq.elements;let ok=true;
   ok=flag(f.name,f.name.value.trim().length>1)&ok;ok=flag(f.phone,phoneOk(f.phone.value))&ok;
   ok=flag(f.date,f.date.value&&f.date.value>='2027-08-15')&ok;const g=+f.guests.value;ok=flag(f.guests,g>=50&&g<=100)&ok;
-  if(!ok){bq.querySelector('.err input')?.focus();return}
+  if(!ok){const firstErr=bq.querySelector('.err input');if(firstErr)firstErr.focus();return}
   const d={name:f.name.value.trim(),phone:f.phone.value.trim(),type:f.type.value,date:f.date.value,guests:g},ref=save('banquet',d);
   confirmBox('Enquiry received',[`Thank you, <b>${esc(d.name)}</b>.`,`${esc(d.type)} · ${d.guests} guests · ${esc(d.date)}`],ref,`Hello TriStar 1947, banquet enquiry (${ref}): ${d.type}, ${d.guests} guests on ${d.date}. Name: ${d.name}, Phone: ${d.phone}`);bq.reset()});
 
 const rs=$('#rsvForm');wire(rs);
 rs.addEventListener('submit',e=>{e.preventDefault();const f=rs.elements;let ok=true;
   ok=flag(f.name,f.name.value.trim().length>1)&ok;ok=flag(f.phone,phoneOk(f.phone.value))&ok;ok=flag(f.date,f.date.value&&f.date.value>=minFor(f.seat.value))&ok;
-  if(!ok){rs.querySelector('.err input')?.focus();return}
+  if(!ok){const firstErr=rs.querySelector('.err input');if(firstErr)firstErr.focus();return}
   const d={name:f.name.value.trim(),phone:f.phone.value.trim(),date:f.date.value,time:f.time.value,guests:f.guests.value,seating:f.seat.value},ref=save('reservation',d);
   confirmBox('Booking requested',[`<b>${esc(d.name)}</b>, we have your request.`,`${esc(d.date)} · ${esc(d.time)}<br>${esc(d.guests)} · ${esc(d.seating)}`],ref,`Hello TriStar 1947, pre-launch table booking (${ref}): ${d.guests}, ${d.date} at ${d.time}, ${d.seating}. Name: ${d.name}, Phone: ${d.phone}`);
   rs.reset();syncRes()});
@@ -774,10 +814,10 @@ $('#adminLink').onclick=()=>{const all=store.get('ts2_inbox',[]);
   const rows=all.map(r=>`<tr><td>${esc(r.ref)}</td><td>${esc(r.kind)}</td><td>${new Date(r.at).toLocaleString()}</td><td>${esc(r.name)}<br>${esc(r.phone)}</td><td>${esc([r.type,r.date,r.time,r.guests,r.seating,r.items,r.total?rupee(r.total):''].filter(Boolean).join(' · '))}</td></tr>`).join('');
   showModal(`<div style="text-align:left"><h3>Staff inbox</h3><p>Submissions made on this device (stored in this browser).</p>${all.length?`<table><thead><tr><th>Ref</th><th>Type</th><th>When</th><th>Guest</th><th>Details</th></tr></thead><tbody>${rows}</tbody></table>`:'<p style="padding:24px 0">Nothing yet.</p>'}
   <div style="display:flex;gap:10px;margin-top:20px;flex-wrap:wrap">${all.length?'<button class="pill out" id="csv" style="width:auto;margin:0">Download CSV</button><button class="pill out" id="clr" style="width:auto;margin:0">Clear</button>':''}<button class="pill" data-close style="width:auto;margin:0">Close</button></div></div>`,true);
-  $('#csv')?.addEventListener('click',()=>{const cols=['ref','kind','at','name','phone','type','date','time','guests','seating','items','total'];
-    const csv=[cols.join(','),...all.map(r=>cols.map(c=>'"'+String(r[c]??'').replace(/"/g,'""')+'"').join(','))].join('\n');
+  const csvButton=$('#csv');if(csvButton)csvButton.addEventListener('click',()=>{const cols=['ref','kind','at','name','phone','type','date','time','guests','seating','items','total'];
+    const csv=[cols.join(',')].concat(all.map(r=>cols.map(c=>'"'+String(r[c]==null?'':r[c]).replace(/"/g,'""')+'"').join(','))).join('\n');
     const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='tristar-inbox.csv';a.click()});
-  $('#clr')?.addEventListener('click',()=>{if(confirm('Clear all saved submissions?')){store.set('ts2_inbox',[]);modal.classList.remove('on')}})};
+  const clearButton=$('#clr');if(clearButton)clearButton.addEventListener('click',()=>{if(confirm('Clear all saved submissions?')){store.set('ts2_inbox',[]);modal.classList.remove('on')}})};
 
 /* ---------- nav, scroll effects ---------- */
 const burger=$('#burger'),links=$('#links');
@@ -799,8 +839,10 @@ function paint(){
 function onScroll(){paint()}
 addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',paint);onScroll();
 
-const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}}),{threshold:.12});
-$$('.rv').forEach(el=>io.observe(el));
+if('IntersectionObserver' in window){
+  const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}}),{threshold:.12});
+  $$('.rv').forEach(el=>io.observe(el));
+}else{$$('.rv').forEach(el=>el.classList.add('in'))}
 renderAll();renderCart();
 })();
 </script>
